@@ -18,7 +18,6 @@ public class TestFlightProvider {
     public Object execute(Map<String, Object> input) {
         Map<String, Object> output = new HashMap<>();
         output.putAll(getFlightTask.process(input));
-        TestFlightOutboundDTO testFlightOutboundDTO =(TestFlightOutboundDTO) output.get(Utils.RESPONSE.toString());
-        return testFlightOutboundDTO;
+        return (TestFlightOutboundDTO) output.get(Utils.RESPONSE.toString());
     }
 }
