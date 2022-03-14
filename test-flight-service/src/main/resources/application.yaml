@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: test-flight-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/FLIGHT_DEMO
+    username: root
+    password: P@ssw0rd
+    hikari:
+      maximumPoolSize: 30
+      schema: FLIGHT_DEMO
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        default_schema: FLIGHT_DEMO
+        globally_quoted_identifiers: true
+        enable_lazy_load_no_trans: true
+
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
